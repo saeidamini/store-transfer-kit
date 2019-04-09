@@ -5,7 +5,7 @@ namespace StoreTransferKit.Repository {
 	public interface IFactorRepository {
 		List<Factor> GetItems(int id);
 		bool DeleteFactor(int id);
-		int Count();
+		int Count(int lessThan);
 
 	}
 }
