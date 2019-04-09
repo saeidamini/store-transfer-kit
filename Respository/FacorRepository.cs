@@ -36,9 +36,10 @@ namespace StoreTransferKit.Repository
 			return items;
 		}
 
-		public int Count()
+		public int Count(int lessThan)
 		{
-			string sql = "SELECT count(*) FROM factor";
+			string lessCondition = lessThan > 0 ? " where id>" + lessThan : "";
+			string sql = "SELECT count(*) FROM factor " + lessCondition;
 			int count = _db.ExecuteScalar<int>(sql);
 			return count;
 		}
