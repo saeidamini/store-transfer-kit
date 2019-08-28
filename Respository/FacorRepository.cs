@@ -22,7 +22,7 @@ namespace StoreTransferKit.Repository
 		{
 			string sql =@"
 			SELECT f.id as refID, f.amountPaid as amountPaid, f.code as code, f.totalPrice totalPrice, strftime('%Y-%m-%dT%H:%M:%S.0Z',f.salesDate) as salesDate,
-			c.id as customer_id, c.lastName, c.code
+			c.id as customer_id, c.lastName, c.code, c.mobile
 				FROM factor f
 			INNER JOIN customer c ON f.customer_id = c.id
 			where f.id >  " + @FactorId.ToString() ;
